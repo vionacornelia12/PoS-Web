@@ -19,6 +19,7 @@
   "homepage": "https://github.com/vionacornelia12/PoS-Web#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "lodash.random": "^3.2.0",
     "moment": "^2.29.4",
     "socket.io": "^4.5.4",
     "sphp": "^0.6.3"
