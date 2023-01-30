@@ -13,7 +13,7 @@
 // echo $result;
 
 ?> -->
-  <form action="" method="POST" class="form-calc">
+  <form action="" class="form-calc">
       <div class="calc-body">
         <div class="calc-screen">
           <input type="text" name="calc-input" class="calc-input" style="display: none;">
@@ -49,7 +49,41 @@
           <div class="button" onclick="specialAction(0);">0</div>
           <div class="button">&nbsp;
           </div>
-          <button class="button submit" type="submit" onclick="count(event);">=</button>
+          <button class="button btn-calc" type="button">=</button>
+          <!-- onclick="count(event);" -->
         </div>
       </div>
   </form>
+
+  <script>
+    $(function(){
+
+      let currentMenu = 0;
+      $('.menu').on("click", function(){
+        currentMenu = $(this).data("id");
+        console.log(currentMenu);
+        $(this).addClass("shadow-md");
+      })
+
+      $('.btn-calc').on("click", function(){
+        count(event);
+        let output_quantity = $('.calc-operation').html();
+        console.log(output_quantity);
+        let id_staff = $('#id_staff').val();
+
+        $.ajax({
+          type:"POST",
+          url:"mysql/proses_insert.php",
+          data:{"id_staff": id_staff, "id_menu": currentMenu, "jumlah":output_quantity},
+            success:function(data){
+              console.log(data);
+            },
+        });
+      })
+      function get(){
+        // count(event);
+        let output_quantity = $('.calc-typed').html();
+        console.log(output_quantity);
+      }
+    })
+  </script>
