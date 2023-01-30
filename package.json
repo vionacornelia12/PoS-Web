@@ -1,0 +1,29 @@
+{
+  "name": "pos-web",
+  "version": "1.0.1",
+  "description": "Web-based Point of Sales application realtime data using websocket",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vionacornelia12/PoS-Web.git"
+  },
+  "author": "ADVJ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vionacornelia12/PoS-Web/issues"
+  },
+  "homepage": "https://github.com/vionacornelia12/PoS-Web#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "socket.io": "^4.5.4",
+    "sphp": "^0.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
