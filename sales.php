@@ -66,7 +66,7 @@
                 <td><?=$hari[date_format($now, 'N')].", ".date_format($now,"d")." ".$bulan[date_format($now, 'n')]." ".date_format($now,"Y")?></td>
               </tr>
               <tr>
-                <td><?=date('h:m:s')?></td>
+                <td class="waktu"></td>
               </tr>
             </table>
     </div>
@@ -188,6 +188,13 @@
     $(function () {
       $('#header').load("template/header.html");
       $('#footer').load("template/footer.html");
+
+      setInterval(function() {
+            var date = new Date();
+            $('.waktu').html(
+                date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+                );
+        }, 500);
     })
   </script>
 
