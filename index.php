@@ -52,12 +52,39 @@ include("mysql/conn.php");
             </table>
           </div>
           <div class="col-sm-6 text-start">
+            <?php
+            $now = new DateTime();
+            setlocale(LC_TIME, 'id_ID');
+            $hari = array(
+                1 => 'Senin',
+                'Selasa',
+                'Rabu',
+                'Kamis',
+                'Jumat',
+                'Sabtu',
+                'Minggu'
+            );
+            $bulan = array(
+                1 => 'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+            ?>
             <table class="table table-borderless border-0">
               <tr>
-                <td>Selasa, 31 Januari 2023</td>
+                <td><?=$hari[date_format($now, 'N')].", ".date_format($now,"d")." ".$bulan[date_format($now, 'n')]." ".date_format($now,"Y")?></td>
               </tr>
               <tr>
-                <td>14:56:02</td>
+                <td><?=date('h:m:s')?></td>
               </tr>
             </table>
           </div>
